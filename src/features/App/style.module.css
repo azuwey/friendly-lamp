@@ -1,0 +1,3 @@
+.hello {
+  @apply text-3xl font-bold underline;
+}
