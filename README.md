@@ -1,6 +1,6 @@
-# React TS Template
+# Friendly Lamp
 
-React Typescript Template with Vite and Tailwind
+Solana GIF wall
 
 ## Install dependencies
 
