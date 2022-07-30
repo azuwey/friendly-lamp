@@ -32,6 +32,5 @@ The application is not supposed to be run by the built-in server, but in-case if
 of the application, after you build the application, you can run the following command:
 
 ```shell
-npm run build
 npm run start:prev
 ```
