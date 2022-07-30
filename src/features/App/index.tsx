@@ -4,6 +4,7 @@ import Button from "@components/Button";
 import { usePhantomWallet } from "@contexts/phantomWallet";
 import styles from "./style.module.css";
 import { Link } from "@components/Link";
+import { ImageGrid } from "@features/ImageGrid";
 
 export default function App() {
   const { publicKeyString, isConnected, detectProvider, tryConnectWallet, tryDisconnectWallet } =
@@ -56,11 +57,7 @@ export default function App() {
         </div>
       </div>
       <div className={styles["content"]}>
-        {isPhantomWalletInstalled && isConnected && (
-          <>
-            <span>{`Public key: ${publicKeyString}`}</span>
-          </>
-        )}
+        {isPhantomWalletInstalled && isConnected && <ImageGrid />}
       </div>
       <footer className={styles["footer"]}>
         <Link

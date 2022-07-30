@@ -1,0 +1,7 @@
+.image-grid {
+    @apply grid grid-cols-3 gap-4;
+}
+
+.image {
+    @apply w-full rounded-xl aspect-video object-cover;
+}
