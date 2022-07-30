@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + React + TS</title>
+  <title>Friendly Lamp</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://friendly-lamp.vercel.app/">
+  <meta property="og:title" content="Friendly Lamp">
+  <meta property="og:description" content="Create a GIF collection with the Metaverse!">
+  <meta property="og:image" content="/metadata.png">
 </head>
-<body>
+<body class="flex h-screen w-screen bg-neutral-700 text-neutral-200">
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div id="root" class="flex flex-1 flex-col items-center justify-center"></div>
 
   <script src="/src/index.tsx" type="module"></script>
 </body>

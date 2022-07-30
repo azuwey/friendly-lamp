@@ -1,5 +1,7 @@
 # Friendly Lamp
 
+[![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=friendly-lamp)](https://friendly-lamp.vercel.app/)
+
 Solana GIF wall
 
 ## Install dependencies

@@ -23,6 +23,8 @@
     "format": "prettier --write 'src/**/*.{ts,tsx,css}' --config ./.prettierrc"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@solana/web3.js": "^1.50.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
