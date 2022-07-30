@@ -29,7 +29,7 @@ npm run start:dev
 ### Production preview
 
 The application is not supposed to be run by the built-in server, but in-case if you would like to have a preview view
-of the application, after you build the application, you can run the following command:
+of the application, after you built the application, you can run the following command:
 
 ```shell
 npm run start:prev
