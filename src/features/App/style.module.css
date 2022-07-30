@@ -1,32 +1,51 @@
-.title {
-  @apply text-center text-5xl font-bold;
+.layout {
+  @apply mx-auto w-full max-w-6xl overflow-hidden px-8 pt-28 pb-14;
 }
 
-.title-icon {
-  @apply h-16 w-16 text-amber-500;
+.header {
+  @apply fixed inset-x-0 top-0 z-10 mx-auto grid w-full max-w-6xl grid-cols-2 bg-neutral-700 px-8 pt-5;
+}
+
+.title-container {
+  @apply flex;
+}
+
+.wallet-connect-container {
+  @apply flex items-center justify-end;
+}
+
+.app-title-container {
+  @apply row-span-1 flex items-center gap-2 pb-3;
+}
+
+.app-title {
+  @apply text-4xl font-extrabold tracking-tight;
+}
+
+.app-title-icon {
+  @apply h-10 w-10 text-amber-500;
+}
+
+.sub-title-container {
+  @apply row-span-1 flex items-center gap-1 pb-3;
 }
 
 .sub-title {
-  @apply text-center text-2xl font-semibold;
+  @apply text-lg font-bold;
 }
 
 .sub-title-icon {
   @apply h-7 w-7;
 }
 
-.top-container {
-  @apply flex items-center justify-center gap-2;
-}
-
-.middle-container {
-  @apply flex items-center justify-center gap-0.5 pb-12;
-}
-
-.bottom-container {
-  @apply flex items-center justify-center;
+.content {
+  @apply z-0 overflow-y-auto py-8;
 }
 
 .footer {
-  @apply fixed bottom-0 pb-5;
+  @apply fixed inset-x-0 bottom-0 z-10 mx-auto flex w-full max-w-6xl justify-center bg-neutral-700 px-8 py-3.5;
 }
 
+.link-list-container {
+  @apply block;
+}
