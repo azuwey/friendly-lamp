@@ -19,15 +19,15 @@ export default function App() {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-2">
-        <SparklesIcon className="h-16 w-16 text-amber-500" />
+      <div className={styles["top-container"]}>
+        <SparklesIcon className={styles["title-icon"]} />
         <h1 className={styles["title"]}>Friendly Lamp</h1>
       </div>
-      <div className="flex items-center justify-center gap-0.5 pb-12">
+      <div className={styles["middle-container"]}>
         <h1 className={styles["sub-title"]}>View your GIF collection in the metaverse</h1>
-        <PhotographIcon className="h-7 w-7" />
+        <PhotographIcon className={styles["sub-title-icon"]} />
       </div>
-      <div className="flex items-center justify-center">
+      <div className={styles["bottom-container"]}>
         {!isPhantomWalletInstalled && <span>Install phantom wallet</span>}
         {isPhantomWalletInstalled && !isConnected && (
           <Button onClick={tryConnectWallet}>Connect to Phantom Wallet</Button>

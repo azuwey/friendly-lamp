@@ -1,7 +1,27 @@
 .title {
-  @apply text-5xl font-bold underline text-center;
+  @apply text-center text-5xl font-bold underline;
+}
+
+.title-icon {
+  @apply h-16 w-16 text-amber-500;
 }
 
 .sub-title {
-  @apply text-2xl font-semibold text-center;
+  @apply text-center text-2xl font-semibold;
+}
+
+.sub-title-icon {
+  @apply h-7 w-7;
+}
+
+.top-container {
+  @apply flex items-center justify-center gap-2;
+}
+
+.middle-container {
+  @apply flex items-center justify-center gap-0.5 pb-12;
+}
+
+.bottom-container {
+  @apply flex items-center justify-center;
 }
