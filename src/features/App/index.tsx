@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { PhotographIcon, SparklesIcon } from "@heroicons/react/outline";
+import { ExternalLinkIcon, PhotographIcon, SparklesIcon, LinkIcon } from "@heroicons/react/outline";
 import Button from "@components/Button";
 import { usePhantomWallet } from "@contexts/phantomWallet";
 import styles from "./style.module.css";
+import { Link } from "@components/Link";
 
 export default function App() {
   const { publicKeyString, isConnected, detectProvider, tryConnectWallet, tryDisconnectWallet } =
@@ -28,7 +29,16 @@ export default function App() {
         <PhotographIcon className={styles["sub-title-icon"]} />
       </div>
       <div className={styles["bottom-container"]}>
-        {!isPhantomWalletInstalled && <span>Install phantom wallet</span>}
+        {!isPhantomWalletInstalled && (
+          <Link
+            icon={<ExternalLinkIcon />}
+            href="https://phantom.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Install phantom wallet
+          </Link>
+        )}
         {isPhantomWalletInstalled && !isConnected && (
           <Button onClick={tryConnectWallet}>Connect to Phantom Wallet</Button>
         )}
@@ -39,6 +49,16 @@ export default function App() {
           </>
         )}
       </div>
+      <footer className={styles["footer"]}>
+        <Link
+          icon={<LinkIcon />}
+          href="https://github.com/azuwey/friendly-lamp/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </Link>
+      </footer>
     </>
   );
 }

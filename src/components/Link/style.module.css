@@ -1,0 +1,11 @@
+.link {
+  @apply flex items-center gap-1 text-lg font-semibold hover:text-violet-700;
+}
+
+.icon {
+  @apply h-5 w-5;
+}
+
+.text {
+  @apply underline;
+}
