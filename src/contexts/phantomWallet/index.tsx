@@ -1,20 +1,18 @@
-import React, { createContext, PropsWithChildren, useContext, useState } from "react";
+import React, { createContext, PropsWithChildren, useContext, useEffect, useState } from "react";
 import { PhantomProvider } from "./types";
 
 const PhantomWalletContext = createContext<{
   provider: PhantomProvider | undefined;
   publicKeyString: string;
   isConnected: boolean;
-  detectProvider: () => Error | null;
+  isInstalled: boolean;
   tryConnectWallet: () => Promise<Error | null>;
   tryDisconnectWallet: () => Promise<Error | null>;
 }>({
   provider: undefined,
   publicKeyString: "",
   isConnected: false,
-  detectProvider: () => {
-    throw new Error("PhantomWalletContext cannot be used without PhantomWalletProvider");
-  },
+  isInstalled: false,
   tryConnectWallet: () => {
     throw new Error("PhantomWalletContext cannot be used without PhantomWalletProvider");
   },
@@ -28,25 +26,24 @@ export function PhantomWalletProvider(props: PropsWithChildren) {
     provider: PhantomProvider | undefined;
     publicKeyString: string;
     isConnected: boolean;
+    isInstalled: boolean;
   }>({
     provider: undefined,
     publicKeyString: "",
     isConnected: false,
+    isInstalled: false,
   });
 
-  const detectProvider = (): Error | null => {
+  const detectProvider = () => {
     if ("phantom" in window) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const provider = window.phantom?.solana;
 
       if (provider?.isPhantom) {
-        setWallet((prevState) => ({ ...prevState, provider }));
-        return null;
+        setWallet((prevState) => ({ ...prevState, provider, isInstalled: true }));
       }
     }
-
-    return new Error("Phantom wallet not installed");
   };
 
   const tryConnectWallet = async (): Promise<Error | null> => {
@@ -79,10 +76,13 @@ export function PhantomWalletProvider(props: PropsWithChildren) {
     return null;
   };
 
+  useEffect(() => {
+    detectProvider();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <PhantomWalletContext.Provider
-      value={{ ...wallet, detectProvider, tryConnectWallet, tryDisconnectWallet }}
-    >
+    <PhantomWalletContext.Provider value={{ ...wallet, tryConnectWallet, tryDisconnectWallet }}>
       {props.children}
     </PhantomWalletContext.Provider>
   );

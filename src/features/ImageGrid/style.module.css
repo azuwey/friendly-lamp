@@ -3,5 +3,5 @@
 }
 
 .image {
-    @apply w-full rounded-xl aspect-video object-cover;
+    @apply w-full rounded-xl aspect-video object-cover border border-neutral-500;
 }
