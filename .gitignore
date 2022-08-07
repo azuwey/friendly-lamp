@@ -26,3 +26,4 @@ dist-ssr
 keypair.json
 test-ledger
 program/dist
+program/target
