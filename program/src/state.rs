@@ -5,9 +5,3 @@ use borsh::{ BorshSerialize, BorshDeserialize };
 pub struct State {}
 
 impl Sealed for State {}
-
-impl IsInitialized for State {
-  fn is_initialized(&self) -> bool {
-    self.is_initialized()
-  }
-}
