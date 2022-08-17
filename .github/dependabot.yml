@@ -12,4 +12,4 @@ updates:
   - package-ecosystem: "cargo"
       directory: "/program"
       schedule:
-        interval: "daily"
+        interval: "weekly"
