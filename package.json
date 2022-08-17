@@ -22,6 +22,7 @@
     "start:client:prev": "vite preview",
     "lint:client": "eslint 'src/**/*.{ts,tsx}'",
     "lint:client:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "test:program": "cargo test --manifest-path=program/Cargo.toml -- --nocapture",
     "format": "prettier --write '{src/**/*.{ts,tsx,css},program/src/*.rs}' --config ./.prettierrc"
   },
   "dependencies": {

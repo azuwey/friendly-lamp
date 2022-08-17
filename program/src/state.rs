@@ -1,15 +1,16 @@
-use solana_program::{ pubkey::Pubkey, program_pack::{ IsInitialized, Sealed } };
 use borsh::{ BorshSerialize, BorshDeserialize };
+use solana_program::{ program_pack::{ Sealed } };
 
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
-pub struct State {
-  pub is_initialized: bool,
+pub struct ApplicationState {
+  pub gif_count: u64,
 }
 
-impl Sealed for State {}
+impl Sealed for ApplicationState {}
 
-impl IsInitialized for State {
-  fn is_initialized(&self) -> bool {
-    self.is_initialized
-  }
+#[derive(BorshSerialize, BorshDeserialize, Debug)]
+pub struct GifState {
+  pub url: String,
 }
+
+impl Sealed for GifState {}
